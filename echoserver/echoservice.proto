@@ -1,0 +1,31 @@
+syntax = "proto2";
+
+package popovicu.bazel.grpc.services.echo;
+
+option java_package = "popovicu.bazel.grpc.services";
+option java_outer_classname = "EchoService";
+
+// The service where clients requests a repetion of a certain message and gets
+// the repeated string back.
+service EchoService {
+  rpc DoEcho(EchoRequest) returns (EchoResponse) {}
+}
+
+// Request describing what message the client wants echoed back and how many
+// times.
+message EchoRequest {
+  // The message to be echoed back to the client.
+  // Always set.
+  optional string payload = 1;
+
+  // The number of times the message should be echoed back to the client.
+  // Always set.
+  optional int32 repetitions = 2;
+}
+
+// Server response which repeats the requested message the requested number of
+// times.
+message EchoResponse {
+  // The repeated payload.
+  repeated string payloads = 1;
+}

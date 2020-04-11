@@ -27,3 +27,15 @@ cc_library(
         "@com_github_grpc_grpc//:grpc++",
     ],
 )
+
+cc_binary(
+    name = "echo_server_cc",
+    srcs = ["echo_server.cc"],
+    deps = [
+        "@com_github_grpc_grpc//:grpc++",
+        "@com_github_grpc_grpc//:grpc++_reflection",
+        "@com_github_abseil_abseil_cpp//absl/flags:flag",
+        "@com_github_abseil_abseil_cpp//absl/flags:parse",
+        ":echo_service_cc",
+    ],
+)

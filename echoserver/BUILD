@@ -10,11 +10,13 @@ proto_library(
 cc_proto_library(
     name = "echo_service_cc_proto",
     deps = [":echo_service_proto"],
+    visibility = ["//visibility:public"],
 )
 
 java_proto_library(
   name = "echo_service_java_proto",
   deps = [":echo_service_proto"],
+  visibility = ["//visibility:public"],
 )
 
 cc_grpc_library(

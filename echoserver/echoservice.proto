@@ -2,7 +2,7 @@ syntax = "proto2";
 
 package popovicu.bazel.grpc.services.echo;
 
-option java_package = "popovicu.bazel.grpc.services";
+option java_package = "popovicu.bazel.grpc.services.echo";
 option java_outer_classname = "Echo";
 
 // The service where clients requests a repetion of a certain message and gets

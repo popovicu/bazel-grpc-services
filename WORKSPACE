@@ -74,8 +74,11 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 load("@com_github_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_ARTIFACTS")
 load("@com_github_grpc_grpc_java//:repositories.bzl", "IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS")
 
+# TODO(popovicu): BUILD aliases for the JARs.
+MAVEN_DEPS = ["commons-cli:commons-cli:1.4"]
+
 maven_install(
-    artifacts = IO_GRPC_GRPC_JAVA_ARTIFACTS,
+    artifacts = IO_GRPC_GRPC_JAVA_ARTIFACTS + MAVEN_DEPS,
     generate_compat_repositories = True,
     override_targets = IO_GRPC_GRPC_JAVA_OVERRIDE_TARGETS,
     repositories = [
